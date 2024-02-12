@@ -36,19 +36,19 @@ Discussing the problems with your peers is encouraged and does not violate acade
   \begin{parts}
     \part $\forall x (-2 < x < 3)$
     \begin{solution}
-      % Enter your solution here.
+      $\exists x (x\le-2 \lor x\ge3)$
     \end{solution}
     \part $\forall x (0 \le x < 5)$
     \begin{solution}
-      % Enter your solution here.
+      $\exists x (x<0 \lor x\ge5)$
     \end{solution}
     \part $\exists x (-4 \le x \le 1)$
     \begin{solution}
-      % Enter your solution here.
+      $\forall x (x<-4 \lor x>1)$
     \end{solution}
     \part $\exists x (-5 < x < -1)$
     \begin{solution}
-      % Enter your solution here.
+      $\forall x (x\le-5 \lor x\ge-1)$
     \end{solution}
   \end{parts}
 
@@ -63,23 +63,75 @@ Discussing the problems with your peers is encouraged and does not violate acade
   \begin{parts}
     \part $\forall x (P(x) \implies Q(x))$ and $\forall x P(x) \implies \forall x Q(x)$
     \begin{solution}
-      % Enter your solution here.
+      For the two statements to be logically equivalent, they must have the same truth values over all domains and predicates. We show that they are not equivalent by presenting a counterexample.
+
+      \begin{proof}
+      Consider a $P(x)$ that is true for some and false for other values in the domain.\\
+      Consider a $Q(x)$ that is false for all values in the domain.
+
+      LHS:\\
+      $P(x)\implies Q(x)$ is true for some and false for other values in the domain.\\
+      Therefore, LHS, i.e., $\forall x(P(x)\implies Q(x))$, is false.
+
+      RHS:\\
+      $\forall x P(x)$ is false. $\forall x Q(x)$ is false.\\
+      Therefore RHS, i.e., $\forall x P(x) \implies \forall x Q(x)$, is true.
+    \end{proof}
     \end{solution}
     \part $\forall x (P(x) \iff Q(x))$ and $\forall x P(x) \iff \forall x Q(x)$
     \begin{solution}
-      % Enter your solution here.
-    \end{solution}
+      For the two statements to be logically equivalent, they must have the same truth values over all domains and predicates. We show that they are not equivalent by presenting a counterexample.
+
+      \begin{proof}
+      Consider a $P(x)$ that is true for some and false for other values in the domain.\\
+      Consider a $Q(x)$ that is false for all values in the domain.
+
+      LHS:\\
+      $P(x)\iff Q(x)$ is true for some and false for other values in the domain.\\
+      Therefore, LHS, i.e., $\forall x(P(x)\iff Q(x))$, is false.
+
+      RHS:\\
+      $\forall x P(x)$ is false. $\forall x Q(x)$ is false.\\
+      Therefore RHS, i.e., $\forall x P(x) \iff \forall x Q(x)$, is true.
+    \end{proof}
+  \end{solution}
   \end{parts}
 
   \question Show that the following pairs of statements are not logically equivalent.
   \begin{parts}
     \part $\forall x P(x) \lor \forall x Q(x)$ and $ \forall x (P(x) \lor Q(x))$
     \begin{solution}
-      % Enter your solution here.
+      For the two statements to be logically equivalent, they must have the same truth values over all domains and predicates. We show that they are not equivalent by presenting a counterexample.
+
+      \begin{proof}
+      Consider a $P(x)$ that is true for some and false for other values in the domain.\\
+      Consider $Q(x)\equiv\lnot P(x)$.
+        
+      LHS:\\
+      $\forall x P(x)$ is false. $\forall x Q(x)$ is false.\\
+      Therefore, LHS, i.e., $\forall x(P(x)\lor\forall x Q(x))$, is false.
+
+      RHS:\\
+      $P(x)\lor Q(x)$ is true for every value in the domain.\\
+      Therefore RHS, i.e., $\forall x (P(x) \lor Q(x))$, is true.
+      \end{proof}
     \end{solution}
     \part $\exists x P(x) \land \exists x Q(x)$ and $ \exists x (P(x) \land Q(x))$
     \begin{solution}
-      % Enter your solution here.
+      For the two statements to be logically equivalent, they must have the same truth values over all domains and predicates. We show that they are not equivalent by presenting a counterexample.
+
+      \begin{proof}
+      Consider a $P(x)$ that is true for some values in the domain.\\
+      Consider a $Q(x)$ that is true for some different values in the domain.
+        
+      LHS:\\
+      $\exists x P(x)$ is true. $\exists x Q(x)$ is true.\\
+      Therefore, LHS, i.e., $\exists x P(x)\land \exists x Q(x)$, is true.
+
+      RHS:\\
+      $P(x)\land Q(x)$ is false for every value in the domain.\\
+      Therefore RHS, i.e., $\exists x (P(x) \land Q(x))$, is false.
+      \end{proof}
     \end{solution}
   \end{parts}
 
@@ -89,73 +141,84 @@ Discussing the problems with your peers is encouraged and does not violate acade
   \question A discrete mathematics class contains 1 CND freshman, 3 CND sophomores, 15 CS sophomores, 2 CND juniors, 2 CS juniors, and 1 CS senior. Express each of these statements in terms of quantifiers and then determine its truth value.
   \begin{parts}
     \part There is a student in the class who is a junior.
-    \begin{solution}
-      % Enter your solution here.
+    \begin{solution} For this and subsequent parts, let
+      $M(x,y): x$ has major $y$, where\\
+      the domain of $x$ is all the students in the class, and the domain of $y$ is all majors,\\
+      $R(x,y): x$ has rank $y$, where\\
+      the domain of $x$ is all the students in the class, and the domain of $y$ is all ranks.
+
+      $\exists x R(x, Junior)$\\
+      True, e.g. any of the 2 CND juniors.
     \end{solution}
     \part Every student in the class is a CS major.
     \begin{solution}
-      % Enter your solution here.
+      $\forall x M(x, CS)$\\
+      False, e.g. the CND freshman.
     \end{solution}
     \part There is a student in the class who is neither a CND major nor a junior.
     \begin{solution}
-      % Enter your solution here.
+      $\exists x (\lnot M(x, CND) \land \lnot R(x, Junior))$\\
+      True, e.g. any of the 15 CS sophomores.
     \end{solution}
     \part Every student in the class is either a sophomore or a CS major.
     \begin{solution}
-      % Enter your solution here.
+      $\forall x R(x,Sophomore) \lor M(x, CS))$\\
+      False, e.g. any of the 2 CND juniors.
     \end{solution}
     \part There is a major such that there is a student in the class in every year of study with that major.
     \begin{solution}
-      % Enter your solution here.
+      $\exists m\forall r\exists x M(x,m) \land R(x,r)$\\
+      False. Students from only 2 majors are in the class. Of these, there is no CS freshman or CND senior in the class.
     \end{solution}
   \end{parts}
   
   \question Use predicates, quantifiers, logical connectives, and mathematical operators to express the statement that there is a positive integer that is not the sum of three squares.
     \begin{solution}
-      % Enter your solution here.
+      Let $P(x) : x$ is a positive integer.\\
+      $\exists x [P(x) \land \forall i\forall j\forall k (x\ne i^2 + j^2 + k^2)]$
     \end{solution}
 
   \question Determine the truth value of each of these statements if the domain of each variable consists of all real numbers. Where possible, provide an example if the statement is true, or a counterexample if the statement is False.
   \begin{parts}
     \part $\forall x \exists y (x^2 = y)$
     \begin{solution}
-      % Enter your solution here.
+      True, every real number, $x$, has a square.
     \end{solution}
     \part $\forall x \exists y (x = y^2)$
     \begin{solution}
-      % Enter your solution here.
+      False, any negative real number is a counter example for $x$. There is no $y$ such that $y^2=x$.
     \end{solution}
     \part $\exists x \forall y (xy = 0)$
     \begin{solution}
-      % Enter your solution here.
+      True, e.g. $x=0$.
     \end{solution}
     \part $\exists x \exists y (x + y \ne y + x)$
     \begin{solution}
-      % Enter your solution here.
+      False.
     \end{solution}
     \part $\forall x (x \ne 0 \implies \exists y (xy = 1))$
     \begin{solution}
-      % Enter your solution here.
+      True, every non-zero real number has a multiplicative inverse.
     \end{solution}
     \part $\exists x \forall y (y \ne 0 \implies xy = 1)$
     \begin{solution}
-      % Enter your solution here.
+      False, no real number multiplies with every real number to yield 1.
     \end{solution}
     \part $\forall x \exists y (x + y = 1)$
     \begin{solution}
-      % Enter your solution here.
+      True, $y=1-x$.
     \end{solution}
     \part $\exists x \exists y (x + 2y = 2 \land 2x + 4y = 5)$
     \begin{solution}
-      % Enter your solution here.
+      False, the simultaneous equations have no solution.
     \end{solution}
     \part $\forall x \exists y (x + y = 2 \land 2x - y = 1)$
     \begin{solution}
-      % Enter your solution here.
+      False, there is a unique solution, $(x,y)=(1,1)$. The statement does not hold for all $x$.
     \end{solution}
     \part $\forall x \forall y \exists z (z = \frac{x + y}{2})$
     \begin{solution}
-      % Enter your solution here.
+      True, every pair of real numbers has an average.
     \end{solution}
   \end{parts}
 
@@ -163,19 +226,19 @@ Discussing the problems with your peers is encouraged and does not violate acade
   \begin{parts}
     \part $\forall x \forall y P(x, y)$
     \begin{solution}
-      % Enter your solution here.
+      $P(1,1) \land P(1,2) \land P(1,3) \land P(2,1) \land P(2,2) \land P(2,3) \land P(3,1) \land P(3,2) \land P(3,3)$
     \end{solution}
     \part $\exists x \exists y P(x, y)$
     \begin{solution}
-      % Enter your solution here.
+      $P(1,1) \lor P(1,2) \lor P(1,3) \lor P(2,1) \lor P(2,2) \lor P(2,3) \lor P(3,1) \lor P(3,2) \lor P(3,3)$
     \end{solution}
     \part $\exists x \forall y P(x, y)$
     \begin{solution}
-      % Enter your solution here.
+      $[P(1,1) \land P(1,2) \land P(1,3)] \lor [P(2,1) \land P(2,2) \land P(2,3)] \lor [P(3,1) \land P(3,2) \land P(3,3)]$
     \end{solution}
     \part $\forall x \exists y P(x, y)$
     \begin{solution}
-      % Enter your solution here.
+      $[P(1,1) \lor P(1,2) \lor P(1,3)] \land [P(2,1) \lor P(2,2) \lor P(2,3)] \land [P(3,1) \lor P(3,2) \lor P(3,3)]$
     \end{solution}
   \end{parts}
   
@@ -183,15 +246,15 @@ Discussing the problems with your peers is encouraged and does not violate acade
   \begin{parts}
     \part $\forall x \exists y (x = \frac{1}{y})$
     \begin{solution}
-      % Enter your solution here.
+      One counterexample is $x=2$. No $y$ from the domain can satisfy the statement, $x = \frac{1}{y}$, when $x=2$.
     \end{solution}
     \part $\forall x \exists y (y^2 - x < 100)$
     \begin{solution}
-      % Enter your solution here.
+      One counterexample is $x=-100$. No $y$ from the domain can satisfy the statement,$y^2 - x < 100$, when $x=-100$.
     \end{solution}
     \part $\forall x \forall y (x^2 \ne y^3)$
     \begin{solution}
-      % Enter your solution here.
+      One counterexample is $(x,y)=(1,1)$. It does not satisfy the claim $x^2 \ne y^3$.
     \end{solution}
   \end{parts}
 
@@ -199,21 +262,21 @@ Discussing the problems with your peers is encouraged and does not violate acade
   \begin{parts}
     \part the positive real numbers.
     \begin{solution}
-      % Enter your solution here.
+      False, no such $x$ exists.
     \end{solution}
     \part the integers.
     \begin{solution}
-      % Enter your solution here.
+      True, $x=0$ is an example.
     \end{solution}
     \part the nonzero real numbers.
     \begin{solution}
-      % Enter your solution here.
+      True, any negative $x$ is an example.
     \end{solution}
   \end{parts}
   
-  \question Express the quantification $\exists!x P(x)$ using universal and existential quantifiers, and logical operators.
+  \question Recall the \textit{uniqueness quantifier}, $\exists!$. Express the quantification $\exists!x P(x)$ using universal and existential quantifiers, and logical operators.
     \begin{solution}
-      % Enter your solution here.
+      $\exists!x P(x) \equiv \exists x [P(x) \land \forall y(P(y) \implies y=x)]$
     \end{solution}
   
 \end{questions}
